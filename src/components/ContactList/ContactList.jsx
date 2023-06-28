@@ -16,7 +16,7 @@ const ContactList = () => {
           <Fragment>
             {name}: {number}
           </Fragment>
-          <Button type="button" onClick={() => dispatch(deleteContact(id))}>
+          <Button type="button" onClick={() => dispatch(deleteContact())}>
             Delete
           </Button>
         </Item>

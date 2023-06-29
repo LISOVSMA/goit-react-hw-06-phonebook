@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, Input, Button, Span } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContact } from 'redux/selectors';
 import { addContact } from 'redux/contactSlice';
 import Notiflix from 'notiflix';
 
-const nameInputId = nanoid();
-const numberInputId = nanoid();
+// const nameInputId = nanoid();
+// const numberInputId = nanoid();
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -50,8 +50,8 @@ const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} autoComplete="off">
-      <Label htmlFor={nameInputId}>
+    <Form onSubmit={handleSubmit}>
+      <Label>
         <Span>Name</Span>
         <Input
           type="text"
@@ -64,7 +64,7 @@ const ContactForm = () => {
           required
         />
       </Label>
-      <Label htmlFor={numberInputId}>
+      <Label>
         <Span>Number</Span>
         <Input
           type="tel"

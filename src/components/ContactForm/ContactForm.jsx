@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, Input, Button, Span } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContact } from 'redux/selectors';
@@ -29,11 +28,6 @@ const ContactForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const newContact = {
-      name,
-      number,
-      id: nanoid(),
-    };
 
     const normalizedName = name.toLowerCase();
 
@@ -46,7 +40,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact(newContact));
+    dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
   };

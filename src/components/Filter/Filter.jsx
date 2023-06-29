@@ -2,11 +2,8 @@ import React from 'react';
 import { FilterForm, FilterLabel } from './Filter.styled';
 import { Input, Span } from '../ContactForm/ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
-// import { nanoid } from '@reduxjs/toolkit';
 import { getFilter } from 'redux/selectors';
 import { changeFilter } from 'redux/filterSlice';
-
-// const filterInputId = nanoid();
 
 const Filter = () => {
   const value = useSelector(getFilter);
@@ -25,7 +22,6 @@ const Filter = () => {
           value={value}
           onChange={onChange}
           placeholder="Please enter a name to search"
-          // id={filterInputId}
         />
       </FilterLabel>
     </FilterForm>
